@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">	
+	<bean id="parBeanID" abstract="true">
+		<property name="brand" value="BMW"/>
+		<property name="colour" value="white" />
+		<property name="price" value="8500000" />
+
+   </bean>
+	<bean id="chldBeanID" parent ="parBeanID" class="com.springbeaninheritenceexample.Car">
+		<property name="price" value="95000000"/>
+		<property name="brand" value="Audi" />
+  </bean>
+  
+</beans>

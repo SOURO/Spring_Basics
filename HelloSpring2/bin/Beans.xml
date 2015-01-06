@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+						    
+	<bean id="HelloWorld" class="com.springExamplePackage.HelloWorld"> 
+		<property name="message" value="Hello World!"/> 
+	</bean>
+	
+	<!-- below two lines is for when you add annotation in your class -->
+	<context:annotation-config /> 
+	<context:component-scan base-package="spring2013" /> 
+	 
+</beans>

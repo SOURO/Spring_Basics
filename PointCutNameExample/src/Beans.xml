@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+	<bean id="employee" class="com.pointcut.AspectOrientedProgrammingExample">
+		<property name="name" value="Souro" />
+		<property name="id" value="98072" />
+	</bean>
+	
+	<bean id="afterAdviceBean" class="com.pointcut.PointcutExample" />
+	<bean id="simplePointcut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+        <property name="mappedName" value="printName" />
+	</bean>
+	<bean id="simpleAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+       <property name="pointcut" ref="simplePointcut" />
+       <property name="advice" ref="afterAdviceBean" />
+	</bean>
+	<bean id="employeeProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+ 
+		<property name="target" ref="employee" />
+ 
+		<property name="interceptorNames">
+			<list>
+				<value>simpleAdvisor</value>
+			</list>
+		</property>
+	</bean>
+ 
+</beans>

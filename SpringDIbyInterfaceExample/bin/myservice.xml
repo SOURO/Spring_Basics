@@ -1,0 +1,26 @@
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+	<bean id="text" class="com.springdibyinterfaceexample.MyText" p:textString="My First String...!"/>
+
+		<!-- <bean id="myService" class="MyService" p:text-ref="text"/> -->
+		<!-- The above can be used if you want to inject the dependency yourself-->
+
+		<!-- The below can be used to leave the dependency injection decision to the IoC container -->
+		<!--  <bean id="myService" class="MyService" autowire="byName"/> -->
+
+		<!-- The following line is also almost same as the above except for this case IoC will detect dependency by type -->
+	<bean id="myService" class="com.springdibyinterfaceexample.MyService" autowire="byType"/>
+
+</beans>

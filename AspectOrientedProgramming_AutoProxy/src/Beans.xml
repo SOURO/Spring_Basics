@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+	<bean id="employee" class="com.aspectOrientedProgramming.aspectOrientedProgrammingExample">
+		<property name="name" value="Souro" />
+		<property name="id" value="98072" />
+	</bean>
+	
+	<bean id="beforeAdviceBean" class="com.aspectOrientedProgramming.AutoProxyExample" />
+ 
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+ 
+		<property name="beanNames">
+			<list>
+				<value>employee</value>
+			</list>
+ 		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>beforeAdviceBean</value>
+			</list>
+		</property>
+	</bean>
+ 
+</beans>
