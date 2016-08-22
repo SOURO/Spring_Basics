@@ -1,5 +1,8 @@
 package com.firstspringexample;
 
+/*
+ * This is a POJO
+ */
 public class FirstSpringExample {
 	
 	private String name;
