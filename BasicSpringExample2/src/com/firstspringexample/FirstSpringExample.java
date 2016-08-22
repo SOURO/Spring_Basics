@@ -1,7 +1,7 @@
 package com.firstspringexample;
 
 /*
- * This is a POJO
+ * This is a POJO(Plain Old Java Object)
  */
 public class FirstSpringExample {
 	
